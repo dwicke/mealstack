@@ -4,6 +4,9 @@ import PrimarySearchAppBar from './components/MyAppBar';
 import './App.css';
 import AutoGrid from './components/RecipesPage';
 
+import React from 'react';
+
+
 function App() {
   return (
     <div className="App">
@@ -14,6 +17,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        
         <a
           className="App-link"
           href="https://reactjs.org"

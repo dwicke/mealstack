@@ -14,6 +14,8 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import Login from './Login';
+
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -84,6 +86,7 @@ export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
+
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -98,6 +101,7 @@ export default function PrimarySearchAppBar() {
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
+
   };
 
   const handleMobileMenuOpen = (event) => {
@@ -115,7 +119,11 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      {/* <MenuItem onClick={handleMenuClose}>Login</MenuItem> */}
+      {/* I think it should go something like <Login closeHandle=handleMenuClose /> 
+            and Login will render the MenuItem
+      */}
+      <Login handleMenuClose={handleMenuClose} />
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
   );
